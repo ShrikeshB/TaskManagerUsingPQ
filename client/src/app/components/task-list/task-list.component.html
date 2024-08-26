@@ -1,0 +1,19 @@
+<main class="card-container">
+    <h1>Tasks</h1>
+    <a class="add-btn" href="/addtask">
+        <img src="assets/images/add.png" alt="Add Task" />
+    </a>
+
+    <div class="card" *ngFor="let task of task">
+        <div class="card-content">
+            <h2>{{ task.Task }}</h2>
+            <p>Deadline: {{ task.DeadLine }}</p> <!-- Display the task deadline -->
+            <b>Priority: {{ task.Priority }}</b> <!-- Display the task priority -->
+            <br>
+            <div class="btn-grp">
+                <button (click)="taskDone(task.TID)">Done</button>
+                <button (click)="deleteTask(task.TID)">Delete</button>
+            </div>
+        </div>
+    </div>
+</main>
